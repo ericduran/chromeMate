@@ -1,7 +1,9 @@
 /**
  * @author Eric J. Duran
- * @url http://ericjduran.com/skymate
+ * @url https://github.com/ericduran/chromeMate
  *
- * SkyMate is a web based text editor.
+ * chromeMate is a web based text editor build ontop of Bespin Embed.
+ *
+ * My final goal is to create an editor that can be used with Chrome OS offline. 
  *
  */
