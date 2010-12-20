@@ -4,7 +4,20 @@
  */
 var chromeMate = {};
 
+// Show menu when a list item is clicked
+chromeMate.attachContextMenu = function () {
+  $("#drawer ul li").contextMenu({
+  	menu: 'rightMenu'
+  }, chromeMate.rightClick);
+}
+
 // Get the Bespin editor.
+chromeMate.rightClick = function (action, el, pos) {
+  var fid = $(el).attr('data-fid');
+  if(action == 'delete') {
+    chromeMate.delete(fid, el);
+  }
+}
 
 chromeMate.formatFile = function () {
   var file = new Object;
@@ -53,12 +66,26 @@ chromeMate.new = function () {
   });
 }
 
-chromeMate.save = function (id) {
-  
+chromeMate.save = function (fid) {
+  console.log("Save fid " + name);
 }
 
-chromeMate.delete = function (id) {
-
+chromeMate.delete = function (fid, element) {
+  $( "#dialog-confirm" ).dialog({
+		resizable: false,
+		height: 140,
+		modal: true,
+		buttons: {
+			"Delete": function() {
+			  webSql.webdb.deleteFile(fid);
+			  element.remove();
+				$(this).dialog("close");
+			},
+			Cancel: function() {
+				$(this).dialog("close");
+			}
+		}
+	});
 }
 
 chromeMate.saveAs = function (name) {

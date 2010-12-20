@@ -53,9 +53,10 @@ webSql.webdb.getFile = function(id) {
 }
 
 webSql.webdb.deleteFile = function(id) {
+  console.log(id);
   webSql.webdb.db.transaction(function(tx) {
-    tx.executeSql('DELETE FROM files WHERE ID=?', [id],
-        loadFileItems, webSql.webdb.onError);
+    console.log(tx.executeSql('DELETE FROM files WHERE ID=?', [id],
+        loadFileItems, webSql.webdb.onError));
   });
 }
 
@@ -66,14 +67,17 @@ function loadFile(tx, rs) {
 }
 
 function loadFileItems(tx, rs) {
+  console.log(tx);
+  console.log(rs);
   var rowOutput = "";
   for (var i=0; i < rs.rows.length; i++) {
     $("#fileList").append(renderTodo(rs.rows.item(i)));
   }
+  chromeMate.attachContextMenu();
 }
 
 function renderTodo(row) {
-  return '<li><a href="#" onclick="chromeMate.loadFile('+row.ID+')">' + row.name  +'</a></li>';
+  return '<li data-fid="'+row.ID+'">' + row.name  +'</li>';
 }
 
 
