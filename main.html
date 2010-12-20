@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<link id="bespin_base" href="bespin"> 
+  <script type="text/javascript" src="bespin/BespinEmbedded.js"></script> 
+  <script type="text/javascript" src="jquery/jquery-1.4.4.min.js"></script> 
+  <script type="text/javascript" src="jquery/jquery-ui-1.8.7.custom.min.js"></script> 
+  <script type="text/javascript" src="scripts/webSql.js"></script>
+  <script type="text/javascript" src="scripts/chromeMate.js"></script>
+  <script>
+  window.onBespinLoad = function() {
+    // Get the Bespin editor.
+    editor = document.getElementById("editor").bespin.editor;
+  };
+  function init() {
+    webSql.webdb.open();
+    webSql.webdb.createTable();
+    webSql.webdb.getAllFiles(loadFileItems);
+  }
+  </script>
+  <link type="text/css" href="jquery/css/ui-darkness/jquery-ui-1.8.7.custom.css" rel="stylesheet" /> 
+  <link type="text/css" href="bespin/bespinEmbedded.css" rel="stylesheet" /> 
+  <link type="text/css" href="styles/chromeMate.css" rel="stylesheet" />
+</head>
+<body onload="init();">
+<div id="drawer" style="width: 10%;float: left;">
+  <ul id="fileList">
+    
+  </ul>
+</div>
+<div id="header">
+  <ul id="tabs">
+    <li>Readme</li>
+    <li>Test.html</li>
+    <li>index.php</li>
+    <li>Scripts.js</li>
+  </ul>
+</div>
+<div id="editor" class="bespin" style="width: 90%; height: 700px;" data-bespinoptions='{ "settings": { "tabstop": 4 }, "syntax": "js", "stealFocus": true }'>
+var thisCode = "what shows up in the editor";
+function editMe() {
+ alert("and have fun!");
+}
+</div>
+<div class="footer">
+<a href="#save" onClick="chromeMate.new(); return false;">Save Document</a>
+<a href="#save">New Document</a>
+<select id="theme">
+</select>
+<select id="syntax">
+</select>
+</div>
+<div id="new" title="Save As" class="hidden">
+  <form>
+    <label for="name">
+      filename:
+    </label>
+    <input type="text" id="new-name" />
+  </form>
+</div>
+</body>
+
+</html>

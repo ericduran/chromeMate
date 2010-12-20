@@ -1,0 +1,36 @@
+
+At Launch
+- Gutter with Line Numbers (Free, Done)
+- Syntax highlighter selection (auto-detect from file types)
+  - PHP Support
+  - JS Support
+  - Diff Support
+- Project Drawer
+- Github (gist access)
+- Multiple files (Tabs interface)
+- Theme selector
+- CLI (for bespin)
+- Vim, Emacs Key Mapping
+- sqlite support on browser
+
+
+After Launch
+- Chrome filesystem support
+- Font (use em, so browser should handle that) Selector
+- Textmate Key Mapping
+- Tab styles (Tabs, Spaces, count)
+- Autocomplete (basic php support, let plugins do other)
+- Function selector
+- UI for 
+  - Go to Line
+  - Search
+
+Desire Keyboard Shortcuts
+ - Comment out line (PHP & JS support)
+ - Comment out section (PHP & JS support)
+ -
+
+Future Feature
+- Drupal Plugin
+- JS interpreter (is on the browser)
+- Code validation (JSlint, PHP?)

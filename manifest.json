@@ -1,0 +1,14 @@
+{
+  "name": "chromeMate",
+  "description": "An editor build for Chrome OS",
+  "version": "1",
+  "app": {
+    "launch": {
+      "local_path": "main.html"
+    }
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}

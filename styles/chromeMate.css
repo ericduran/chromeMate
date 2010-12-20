@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#editor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 500px;
+    overflow: hidden
+}
+#header{
+  margin-top: 3px;
+}
+#tabs{
+  margin: 0;
+}
+#tabs li{
+  cursor: pointer;
+  display: inline;
+  padding: 0 10px;
+  margin: 0px;
+  background-color: #e0e0e0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Hidden Elements*/
+.hidden{
+  display: none;
+}
